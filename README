@@ -1,0 +1,16 @@
+
+LiveShift - http://www.liveshift.net
+====================================
+
+LiveShift is a P2P video streaming system. Any user can broadcast its own channel and watch any other channel. Peers collaborate providing part of their upload bandwidth to keep the system up and running.
+
+What differentiates LiveShift from other P2P video streaming systems?
+
+ 1. Support for time shifting, that is, ability to pause and seamless switch between the live transmission, or a time-shifted version.
+ 2. Fully-distributed, in the sense that there is no central server involved. Peers exchange data directly.
+ 3. Open source and written in Java, compatible with several different platforms and operating systems.
+ 
+The software has been developed as part of research projects dealing with video streaming.
+
+So far, LiveShift has been tested in controlled environments. If you are a researcher or a developer, enjoy the source code provided under GPL v3!
+
