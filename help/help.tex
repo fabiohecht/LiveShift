@@ -1,0 +1,157 @@
+\documentclass{beamer}
+%For complete list of themes
+%Check out http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-31.html#node_sec_31
+%\usetheme{Warsaw}
+\usecolortheme{albatross}
+\title{LiveShift - Help}
+%\author{Roman Studer}
+%\date{\today}
+
+\begin{document}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,
+height=\paperheight]{titleframebg.eps}
+}
+
+\frame{
+\titlepage
+}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,
+height=\paperheight]{framebg.eps}
+}
+
+\section[Outline]{}
+\frame{
+\frametitle{Content}
+\tableofcontents
+}
+
+\section{Start LiveShift}
+\frame
+{
+\frametitle{Start LiveShift}
+\textbf{Windows}\\
+extract zip file\\
+run liveshift.bat
+\linebreak 
+\linebreak 
+\textbf{Mac OS}\\
+extract tar file\\
+run liveshift.sh
+\linebreak 
+\linebreak 
+\textbf{Linux}\\
+extract tar file\\
+run liveshift.sh\\
+}
+
+\frame
+{
+\frametitle{Start LiveShift}
+\textbf{Checks}\linebreak
+Is the computer connected to the internet?\linebreak
+Is there a local VLC installation or VLCj library?\linebreak
+\linebreak
+\textbf{Updates}\linebreak
+During start of LiveShift the application automatically checks for updates.
+\linebreak
+If there is a new version available you can choose to download and directly use it or to keep using the current version.
+\linebreak
+On the first time starting LiveShift the user can decide if he allows to send usage date to the developer. The user can change this setting always later in the LiveShift settings.
+}
+
+\section{Interface}
+\frame
+{
+\frametitle{Interface}
+The main interface of LiveShift is divided into three sections:\\
+\textbf{Main Controls}, \textbf{Player} and \textbf{Channels}.
+}
+
+\subsection{Main Controls}
+\frame
+{
+\frametitle{Main Controls}
+The buttons on the left side are used to control the basic functionalities of LiveShift.\linebreak
+\begin{center}
+\includegraphics[scale=0.25]{main.eps}
+\end{center}
+}
+
+\subsubsection{Connection}
+\frame
+{
+\frametitle{Connection}
+If enabled the connection button tries to connect to the network that is defined in the settings.\linebreak
+\linebreak
+If youre not able to connect to the default network:
+\begin{itemize}
+\item check your internet connection,
+\item try to ping the network adress or
+%\item check liveshift.com for information about any issues.
+\end{itemize}
+}
+
+\subsubsection{Publish}
+\frame
+{
+\frametitle{Publish}
+For users who want to publish movies or streams from video devices they can reach the publication setup by using this button.\linebreak
+\linebreak
+The publication setup needs the following information
+\begin{itemize}
+\item \textbf{Name, Description:} Description of the stream
+\item \textbf{Substreams:} 
+\item \textbf{File / Device:} Source for video stream 
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.2]{publish.eps}
+\end{center}
+}
+
+\subsubsection{Channels}
+\frame
+{
+\frametitle{Channels}
+With the channels button the user can toggle the channel list which does appear on the right side of the interface.\linebreak
+To see a channels description just move the mouse over the channel title and the description is shown.\linebreak
+}
+
+\subsubsection{Settings}
+\frame
+{
+\frametitle{Settings}
+In the settings window the user can change the configuration of LiveShift. It is separated into the three sections network, video and miscellaneous.\linebreak
+The network section allows the user to change everything from the used interface to bootstrap peer where the application should connect to.\linebreak
+The video section is basically to select what video player should be used.\linebreak
+Everything else is in miscellaneous.
+\begin{center}
+\includegraphics[scale=0.20]{settings-network.eps}
+\end{center}
+}
+
+\subsubsection{Statistics}
+\frame
+{
+\frametitle{Statistics}
+If the user wants a bit more information about what happens on the application the statistics window shows information about the blocks that have been sent from and to the running LiveShift instance.
+}
+
+\subsubsection{Help}
+\frame
+{
+\frametitle{Help}
+The help opens this file.
+}
+
+\subsection{Player}
+\frame
+{
+\frametitle{Player}
+}
+
+
+\end{document}

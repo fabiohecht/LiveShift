@@ -1,0 +1,35 @@
+<?xml version="1.0"?><svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>red LED on</title>
+ <defs>
+  <linearGradient y2="0.154336" y1="1.1441" xlink:href="#linearGradient6506" x2="0.566583" x1="0.577235" id="linearGradient6650"/>
+  <linearGradient y2="0.846351" y1="0.057496" xlink:href="#linearGradient5756" x2="0.609143" x1="0.532859" id="linearGradient6646"/>
+  <linearGradient y2="1" y1="0.019227" xlink:href="#linearGradient5742" x2="0.500488" x1="0.496181" id="linearGradient6644"/>
+  <linearGradient id="linearGradient6506">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0" id="stop6508"/>
+   <stop stop-color="#ffffff" stop-opacity="0.87451" offset="1" id="stop6510"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5756">
+   <stop stop-color="#828282" offset="0" id="stop5758"/>
+   <stop stop-color="#929292" stop-opacity="0.352941" offset="1" id="stop5760"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5742">
+   <stop stop-color="#adadad" offset="0" id="stop5744"/>
+   <stop stop-color="#f0f0f0" offset="1" id="stop5746"/>
+  </linearGradient>
+  <linearGradient y2="0.553776" x2="0.632943" y1="1" x1="1" id="svg_1">
+   <stop offset="0" stop-opacity="0.984375" stop-color="#008400"/>
+   <stop offset="0.984505" stop-opacity="0.980469" stop-color="#00b700"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g transform="matrix(31.25, 0, 0, 31.25, -625.023, -1325)" id="g9447">
+    <path fill="url(#linearGradient6644)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" id="path6596" d="m21.60074,43.19165c0,0.441601 -0.3584,0.799999 -0.800001,0.799999c-0.441599,0 -0.799999,-0.358398 -0.799999,-0.799999c0,-0.441601 0.3584,-0.799999 0.799999,-0.799999c0.441601,0 0.800001,0.358398 0.800001,0.799999z"/>
+    <path fill="url(#linearGradient6646)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" id="path6598" d="m21.44627,43.191471c0,0.35638 -0.28924,0.645618 -0.64562,0.645618c-0.35638,0 -0.64562,-0.289238 -0.64562,-0.645618c0,-0.35638 0.28924,-0.645611 0.64562,-0.645611c0.35638,0 0.64562,0.28923 0.64562,0.645611z"/>
+    <path fill="url(#svg_1)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" id="path6600" d="m21.378719,43.191639c0,0.31905 -0.25893,0.577991 -0.57798,0.577991c-0.31905,0 -0.57799,-0.258942 -0.57799,-0.577991c0,-0.319038 0.25894,-0.577969 0.57799,-0.577969c0.31905,0 0.57798,0.25893 0.57798,0.577969z"/>
+    <path transform="rotate(-34.3336, 20.5508, 42.8652)" fill="url(#linearGradient6650)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" id="path6602" d="m20.7453,42.86636c0,0.065899 -0.087271,0.11937 -0.194811,0.11937c-0.107529,0 -0.194809,-0.053471 -0.194809,-0.11937c0,-0.06588 0.08728,-0.119358 0.194809,-0.119358c0.10754,0 0.194811,0.053478 0.194811,0.119358z"/>
+   </g>
+  </g>
+ </g>
+</svg>

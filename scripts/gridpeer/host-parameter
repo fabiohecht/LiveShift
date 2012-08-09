@@ -1,0 +1,11 @@
+#file with host	capacity to liveshift, will be processed in order
+#hecht@prosecco.ifi.uzh.ch	8   <== needs to be in 192.168.100.0/24 network in order to work :(
+-p2001 hecht@localhost	8
+-p2002 hecht@localhost	8
+-p2003 hecht@localhost	8
+-p2004 hecht@localhost	8
+-p2005 hecht@localhost	8
+-p2006 hecht@localhost	8
+-p2007 hecht@localhost	32
+-p2008 hecht@localhost	32
+-p2009 hecht@localhost	32

@@ -1,0 +1,146 @@
+<project name="LiveShift" default="izpackexe" basedir=".">
+	<description>LiveShift</description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="lib" location="lib" />
+	<property name="res" location="res" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="installlibs" location="installlibs" />
+	<property name="install" location="install" />
+	<property name="dist-src" location="dist-src" />
+
+	<!-- set version numbers for the components -->
+	<property name="version" value="0.1" />
+	<property name="creator" value="Fabio Hecht" />
+
+	<property name="launch4j.dir" location="${installlibs}/launch4j" />
+
+	<path id="class.path">
+		<fileset dir=".">
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+	<pathconvert property="class-path" dirsep="/" pathsep=" " refid="class.path">
+		<map from="${basedir}${file.separator}lib" to="lib" />
+	</pathconvert>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the all created directories -->
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete dir="${dist-src}" />
+		<delete dir="${install}" />
+	</target>
+
+	<!-- after we set the version we are ready to compile -->
+	<target name="compile" depends="clean" description="compile the source ">
+		<mkdir dir="${build}" />
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac debug="true" srcdir="${src}/java" destdir="${build}" target="1.6" excludes="**/Connection*.java">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="${build}">
+			<fileset dir="${src}/conf">
+				<include name="*" />
+			</fileset>
+		</copy>
+		<copy todir="${build}">
+			<fileset dir="${src}/res">
+				<include name="*" />
+			</fileset>
+		</copy>
+		<copy todir="${build}">
+			<fileset dir="${src}/java">
+				<exclude name="*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}">
+			<fileset dir="">
+				<include name="license.txt" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}">
+			<fileset dir="images">
+				<include name="liveshift.ico" />
+				<include name="gpl.ico" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}/vlclib/linux">
+			<fileset dir="vlclib/linux">
+				<include name="*" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}/vlclib/windows">
+			<fileset dir="vlclib/windows">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<target name="dist" depends="compile" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+		<mkdir dir="${dist}/lib" />
+		<!-- make all jar files. Note that some files are needed form other projects, for example the wizard.-->
+		<jar jarfile="${dist}/liveshift.jar" basedir="${build}">
+			<manifest>
+				<attribute name="Built-By" value="${creator}" />
+				<attribute name="Created-By" value="${creator}" />
+				<attribute name="Main-Class" value="ch.uzh.csg.liveshift.core.CommandLineInterface" />
+				<attribute name="Class-Path" value="${class-path}" />
+			</manifest>
+		</jar>
+		<chmod file="${dist}/liveshift.jar" perm="u+rx"/>
+		<copy todir="${dist}/lib">
+			<fileset dir="${lib}">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${lib}/src">
+				<exclude name="**/*" />
+			</fileset>
+		</copy>		
+	</target>
+
+
+	<!-- create a snapshot, include only these files that are necessary
+	<target name="snapshot" depends="dist" description="performs a snapshot">
+		<tar destfile="snapshot.tar" basedir="${dist}" />
+		<gzip src="snapshot.tar" destfile="snapshot.tar.gz" />
+		<delete file="snapshot.tar" />
+	</target> -->
+
+	<!-- win executable -->
+	<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+
+	<target name="exe" depends="dist" description="create windows exe">
+		<!-- mkdir dir="${dist}/windows" / -->
+		<launch4j configFile="launch4j.xml" jar="${dist}/liveshift.jar" outfile="${dist}/liveshift.exe" />
+	</target>
+
+	<!-- installers -->
+	<taskdef name="IzPack" classpath="${basedir}/installlibs/izpack/standalone-compiler.jar" classname="com.izforge.izpack.ant.IzPackTask"/>
+
+	<target name="izpack-linux" depends="exe" description="create installer">
+		<mkdir dir="${install}" />
+		<IzPack input="IzPack-install-linux.xml" output="${install}/liveshift-install-linux.jar" installerType="standard" basedir="${dist}" IzPackDir="${dist}/" inheritAll="true" />
+		<chmod file="${install}/liveshift-install.jar" perm="u+rx"/>
+	</target>
+	<target name="izpack-windows" depends="izpack-linux" description="create installer">
+		<mkdir dir="${install}" />
+		<IzPack input="IzPack-install-windows.xml" output="${install}/liveshift-install-windows.jar" installerType="standard" basedir="${dist}" IzPackDir="${dist}/" inheritAll="true" />
+		<chmod file="${install}/liveshift-install.jar" perm="u+rx"/>
+	</target>
+
+	<!-- win executable installer -->
+	<target name="izpackexe" depends="izpack-windows" description="create windows exe for izpack">
+		<launch4j configFile="launch4j-izpack.xml" jar="${install}/liveshift-install-windows.jar" outfile="${install}/liveshift-install-windows.exe" />
+	</target>
+
+</project>

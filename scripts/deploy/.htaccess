@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "By Invitation Only"
+AuthUserFile /home/roman/.htpasswd
+Require valid-user
+
+<Limit GET>
+require valid-user
+</Limit> 

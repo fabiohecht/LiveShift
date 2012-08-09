@@ -1,0 +1,11 @@
+#file with host	capacity to liveshift, will be processed in order
+#hecht@192.168.100.82	32
+#hecht@192.168.100.182	32
+#hecht@192.168.100.151	40
+hecht@130.60.156.87	20
+hecht@192.41.135.231	4
+hecht@192.41.135.232	4
+hecht@192.41.135.233	4
+hecht@192.41.135.234	4
+hecht@192.41.135.235	4
+hecht@192.41.135.236	4

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<shortcuts>
+	<skipIfNotSupported />
+	<programGroup defaultName="LiveShift" location="applications" />
+	<shortcut name="LiveShift" target="$INSTALL_PATH\LiveShift.exe"
+		description="Launch LiveShift" workingDirectory="$INSTALL_PATH"
+		iconFile="$INSTALL_PATH\liveshift.ico" initialState="normal"
+		programGroup="yes" desktop="yes" applications="no" startMenu="no"
+		startup="no">
+		<createForPack name="LiveShift" />
+	</shortcut>
+		
+	<shortcut name="License" target="$INSTALL_PATH\license.txt"
+		description="LiveShift's License" workingDirectory="$INSTALL_PATH"
+		iconFile="$INSTALL_PATH\gpl.ico" initialState="normal"
+		programGroup="yes" desktop="no" applications="no" startMenu="no"
+		startup="no">
+		<createForPack name="LiveShift" />
+	</shortcut>
+   
+</shortcuts>
