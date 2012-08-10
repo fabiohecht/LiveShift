@@ -1,9 +1,0 @@
-deploy instructions
-
-LiveShift
-	1. go to ./scripts/deploy/ 
-	2. build: run liveshift-build.sh <version> <comment>
-		jar, exe files created
-	3. deploy: run liveshift-deploy.sh <version>
-		tar, zip files created
-	4. go to ./dist/ to get liveshift.tar and liveshift.zip

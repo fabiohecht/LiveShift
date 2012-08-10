@@ -1,1 +1,0 @@
-cd ~/liveshift;~/jre/bin/java -jar ~/liveshift/liveshift-2.0.jar -i eth0 -b 192.168.10.11 -s "w:60|c:TestChannel1|w:360|q"
