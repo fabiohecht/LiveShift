@@ -4,38 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.JSpinner.DateEditor;
-import javax.swing.JTextField;
-import javax.swing.SpinnerDateModel;
 import javax.swing.border.EmptyBorder;
-
-import net.liveshift.core.LiveShiftApplication;
-import net.liveshift.core.UiListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
-import javax.swing.border.LineBorder;
 
 public class CenterPanel extends JPanel implements PlayerPanel {
 

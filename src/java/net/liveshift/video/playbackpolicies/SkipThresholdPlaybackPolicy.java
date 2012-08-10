@@ -6,8 +6,6 @@ import net.liveshift.configuration.Configuration;
 import net.liveshift.core.LiveShiftApplication;
 import net.liveshift.signaling.messaging.SegmentBlock;
 import net.liveshift.storage.Segment;
-import net.liveshift.video.playbackpolicies.PlaybackPolicy.PlayingDecision;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

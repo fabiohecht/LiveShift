@@ -2,8 +2,6 @@ package net.liveshift.p2p;
 
 import java.util.Set;
 
-import net.liveshift.download.Tuner;
-import net.liveshift.signaling.VideoSignaling;
 import net.liveshift.util.ExecutorPool;
 import net.tomp2p.peers.PeerAddress;
 import net.tomp2p.peers.PeerStatusListener;

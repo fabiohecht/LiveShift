@@ -7,9 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,14 +15,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import net.liveshift.core.LiveShiftApplication;
-import net.liveshift.encoder.DummyEncoder;
-import net.liveshift.encoder.Encoder;
-import net.liveshift.encoder.ExtVLCEncoder;
-import net.liveshift.encoder.VLCJEncoder;
-import net.liveshift.gui.LiveShiftGUI;
 import net.liveshift.incentive.IncentiveMechanism.IncentiveMechanismType;
-import net.liveshift.player.*;
-import net.liveshift.util.Utils;
 import net.liveshift.video.playbackpolicies.PlaybackPolicy.PlaybackPolicyType;
 
 import org.slf4j.Logger;

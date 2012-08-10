@@ -28,8 +28,6 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileFilter;
@@ -368,6 +366,7 @@ public class PublishFrame extends JDialog {
 
 		JButton btnClose = new JButton("      Close     ");
 		btnClose.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				close();
 			}
@@ -377,6 +376,7 @@ public class PublishFrame extends JDialog {
 		
 		JButton btnPublish = new JButton("    Publish     ");
 		btnPublish.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				publishConfiguration.setDescription(txtDescription.getText());
 				publishConfiguration.setVlcParameters(txtVlcCommand.getText());

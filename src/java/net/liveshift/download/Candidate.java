@@ -1,6 +1,5 @@
 package net.liveshift.download;
 
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import net.liveshift.core.PeerId;

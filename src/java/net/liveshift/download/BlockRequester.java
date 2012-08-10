@@ -1,7 +1,6 @@
 package net.liveshift.download;
 
 import java.nio.channels.ClosedByInterruptException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;

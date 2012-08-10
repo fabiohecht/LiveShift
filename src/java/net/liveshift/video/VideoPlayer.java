@@ -17,7 +17,6 @@ import net.liveshift.configuration.Configuration.PlayerName;
 import net.liveshift.core.Channel;
 import net.liveshift.core.LiveShiftApplication;
 import net.liveshift.core.LiveShiftApplication.PlaybackStatus;
-import net.liveshift.player.DummyPlayer;
 import net.liveshift.signaling.messaging.SegmentBlock;
 import net.liveshift.storage.Segment;
 import net.liveshift.storage.SegmentIdentifier;

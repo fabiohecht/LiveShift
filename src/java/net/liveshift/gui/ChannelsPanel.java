@@ -2,7 +2,6 @@ package net.liveshift.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -10,22 +9,14 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import javax.swing.JList;
@@ -69,6 +60,7 @@ public class ChannelsPanel extends JPanel {
 		JButton closeButton = new LiveShiftButton(Design.getInstance().getIcon(Design.ICON_CLOSE_CHANNEL_LIST), true);
 		closeButton.setToolTipText(Design.TOOLTIP_CLOSE_CHANNEL_LIST);
 		closeButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mousePressed(MouseEvent e) {
 				
 				liveShiftGUI.setChannelListVisible(false);
@@ -106,6 +98,7 @@ public class ChannelsPanel extends JPanel {
 		JButton searchButton = new LiveShiftButton(Design.getInstance().getIcon(Design.ICON_SEARCH), true);
 		searchButton.setToolTipText(Design.TOOLTIP_SEARCH);
 		searchButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mousePressed(MouseEvent e) {
 				if (searchFieldIsLabel) {
 					currentSearch = "";
@@ -143,7 +136,8 @@ public class ChannelsPanel extends JPanel {
 		
 		channelList = new JList(listModel) {
 		    // custom tooltip for each item
-		    public String getToolTipText(MouseEvent evt) {
+		    @Override
+			public String getToolTipText(MouseEvent evt) {
 		        int index = locationToIndex(evt.getPoint());
 		        Channel channel = ((ChannelsListModel)getModel()).getChannelAt(index);
 		        if (channel==null)

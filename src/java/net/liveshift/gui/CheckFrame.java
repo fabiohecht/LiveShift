@@ -3,7 +3,6 @@ package net.liveshift.gui;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Image;
-import java.awt.Dialog.ModalityType;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import net.liveshift.configuration.Configuration;
@@ -50,8 +50,8 @@ public class CheckFrame extends JDialog {
 		this.add(new JLabel(new ImageIcon(logoImage)), BorderLayout.CENTER);
 
 		checkInfoLbl = new JLabel();
-		checkInfoLbl.setHorizontalTextPosition(JLabel.CENTER);
-		checkInfoLbl.setHorizontalAlignment(JLabel.CENTER);
+		checkInfoLbl.setHorizontalTextPosition(SwingConstants.CENTER);
+		checkInfoLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		checkInfoLbl.setBorder(new LineBorder(Design.borderColor));
 		this.add(checkInfoLbl, BorderLayout.SOUTH);
 	}

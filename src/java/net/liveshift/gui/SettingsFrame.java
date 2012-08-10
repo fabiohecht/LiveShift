@@ -1,30 +1,20 @@
 package net.liveshift.gui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Collections;
 import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -34,10 +24,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
+import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
 
 import net.liveshift.configuration.Configuration;
@@ -45,14 +34,10 @@ import net.liveshift.configuration.Configuration.EncoderName;
 import net.liveshift.configuration.Configuration.PlayerName;
 import net.liveshift.configuration.Configuration.StreamingProtocol;
 import net.liveshift.core.LiveShiftApplication;
-import net.liveshift.core.LiveShiftApplication.PlayerStatus;
-import net.liveshift.encoder.DummyEncoder;
-import net.liveshift.encoder.Encoder;
 import net.liveshift.encoder.ExtVLCEncoder;
 import net.liveshift.encoder.VLCJEncoder;
 import net.liveshift.player.DummyPlayer;
 import net.liveshift.player.ExtVLCPlayer;
-import net.liveshift.player.Player;
 import net.liveshift.player.VLCJPlayer;
 import net.liveshift.util.Utils;
 
@@ -97,13 +82,13 @@ public class SettingsFrame extends JDialog {
 		this.liveShiftGUI = liveShiftGUI;
 		
 		this.setTitle("LiveShift - Settings");
-		this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.setIconImages(Design.getAppIcons());
 		this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 		this.setBounds(Design.getCenteredPosition(550, 450));
 
-		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(SwingConstants.TOP);
 		getContentPane().add(tabbedPane);
 
 		tabbedPane.addTab("Network", null, getNetworkPanel(), null);
@@ -131,6 +116,7 @@ public class SettingsFrame extends JDialog {
 
 		JButton btnCancel = new JButton("     Cancel     ");
 		btnCancel.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (!unsavedChanges())
 					close();
@@ -147,6 +133,7 @@ public class SettingsFrame extends JDialog {
 
 		JButton btnOk = new JButton("       OK       ");
 		btnOk.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String endMsg = checkVlcEncoder();
 				String playMsg = checkVlcPlayer();
@@ -615,7 +602,7 @@ public class SettingsFrame extends JDialog {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				try {
-					txtUploadRate.setText(Long.toString((long)liveShiftGUI.testUploadRate()));
+					txtUploadRate.setText(Long.toString(liveShiftGUI.testUploadRate()));
 				}
 				catch (RuntimeException re) {
 					JOptionPane.showMessageDialog(that, "Unable to test your upload rate. Check your Internet connection.", "Test Upload Rate", JOptionPane.ERROR_MESSAGE);

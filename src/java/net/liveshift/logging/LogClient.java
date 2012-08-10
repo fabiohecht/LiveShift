@@ -12,8 +12,6 @@ import java.net.URLEncoder;
 import java.net.UnknownHostException;
 import java.util.zip.GZIPOutputStream;
 
-import javax.management.RuntimeErrorException;
-
 import net.liveshift.time.Clock;
 import net.liveshift.util.MixedWriter;
 import net.liveshift.util.Utils;
@@ -131,7 +129,7 @@ public class LogClient {
 		while (lastTime != null && lastTime < 5000L && fileSize <= 50*1024*1024) {
 			lastTime = getUploadIntervalMillis(fileSize);
 			
-			lastRate = ((float)fileSize)/(lastTime/1000F)/1024;
+			lastRate = fileSize/(lastTime/1000F)/1024;
 			if (logger.isDebugEnabled()) {
 				logger.debug("file size "+fileSize+" took "+lastTime+" ms, rate="+lastRate);
 			}

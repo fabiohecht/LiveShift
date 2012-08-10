@@ -40,7 +40,7 @@ public abstract class AbstractMessage implements Comparable<AbstractMessage> {
 		out[offset++] = PROTOCOL_VERSION;
 		out[offset++] = this.messageId;
 		out[offset++] = (byte) (this.messageIdReply==null?0:1);
-		out[offset++] = (byte) (this.messageIdReply==null?0:this.messageIdReply);
+		out[offset++] = (this.messageIdReply==null?0:this.messageIdReply);
 		return offset;
 	}
 	abstract public byte[] toByteArray();

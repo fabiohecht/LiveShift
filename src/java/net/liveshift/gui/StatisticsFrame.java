@@ -3,7 +3,6 @@ package net.liveshift.gui;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -430,6 +429,7 @@ public class StatisticsFrame extends JFrame implements Stats {
 		gbc_btnClose.gridy = 3;
 		contentPane.add(btnClose, BorderLayout.SOUTH);
 		btnClose.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				close();
 			}

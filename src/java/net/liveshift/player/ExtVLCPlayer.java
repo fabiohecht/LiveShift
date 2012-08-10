@@ -3,7 +3,6 @@ package net.liveshift.player;
 import java.awt.Canvas;
 import java.io.IOException;
 
-import net.liveshift.configuration.Configuration;
 import net.liveshift.configuration.Configuration.StreamingProtocol;
 import net.liveshift.core.LiveShiftApplication;
 

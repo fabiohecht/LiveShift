@@ -3,14 +3,10 @@ package net.liveshift.gui;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.MouseInfo;
 import java.awt.Point;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFrame;

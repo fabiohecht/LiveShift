@@ -2,8 +2,6 @@ package net.liveshift.configuration;
 
 import java.io.File;
 
-import net.liveshift.configuration.Configuration.EncoderName;
-import net.liveshift.encoder.Encoder;
 import net.liveshift.encoder.VLCTranscoder;
 
 

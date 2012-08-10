@@ -3,8 +3,6 @@ package net.liveshift.gui;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-
 import javax.swing.AbstractListModel;
 
 import net.liveshift.core.Channel;
@@ -29,7 +27,7 @@ public class ChannelsListModel extends AbstractListModel {
 			return null;
 		}
 		
-		Channel channel = (Channel)this.channels.get(index);
+		Channel channel = this.channels.get(index);
 		
 		return Utils.shortenString(/*"#"+channel.getID()+" "+*/channel.getName(), MAX_LENGTH);
 	}

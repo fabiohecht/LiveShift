@@ -1,7 +1,5 @@
 package net.liveshift.incentive.psh;
 
-import java.util.Random;
-
 import net.liveshift.util.Utils;
 
 

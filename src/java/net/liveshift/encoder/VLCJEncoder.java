@@ -1,6 +1,5 @@
 package net.liveshift.encoder;
 
-import java.awt.Canvas;
 import java.util.Set;
 
 import net.liveshift.configuration.Configuration.StreamingProtocol;

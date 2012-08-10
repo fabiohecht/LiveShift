@@ -30,23 +30,13 @@
 package net.liveshift.core;
 
 import java.awt.Canvas;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import java.io.File;
 import java.io.IOException;
-import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -56,7 +46,6 @@ import java.util.logging.MemoryHandler;
 import net.liveshift.configuration.Configuration;
 import net.liveshift.configuration.PublishConfiguration;
 import net.liveshift.configuration.Configuration.EncoderName;
-import net.liveshift.core.LiveShiftApplication.PlaybackStatus;
 import net.liveshift.download.Tuner;
 import net.liveshift.encoder.DummyEncoder;
 import net.liveshift.encoder.Encoder;
@@ -175,7 +164,8 @@ public class LiveShiftApplication {
 
 
 		Runtime.getRuntime().addShutdownHook(new Thread() {
-		      public void run() {
+		      @Override
+			public void run() {
 		    	  shutdown();
 		      }
 		    });

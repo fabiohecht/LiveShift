@@ -2,30 +2,13 @@ package net.liveshift.core;
 
 import java.io.File;
 
-import java.io.IOException;
-import java.net.UnknownHostException;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.swing.JOptionPane;
-
-import net.liveshift.configuration.Configuration;
 import net.liveshift.configuration.Configuration.EncoderName;
 import net.liveshift.configuration.Configuration.PlayerName;
 import net.liveshift.core.LiveShiftApplication.ConnectionState;
-import net.liveshift.encoder.DummyEncoder;
-import net.liveshift.encoder.ExtVLCEncoder;
-import net.liveshift.encoder.VLCJEncoder;
 import net.liveshift.gui.LiveShiftGUI;
 import net.liveshift.incentive.IncentiveMechanism.IncentiveMechanismType;
-import net.liveshift.player.DummyPlayer;
-import net.liveshift.player.ExtVLCPlayer;
-import net.liveshift.player.VLCJPlayer;
 import net.liveshift.time.Clock;
 import net.liveshift.video.playbackpolicies.PlaybackPolicy.PlaybackPolicyType;
 
@@ -37,12 +20,6 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import uk.co.caprica.vlcj.runtime.RuntimeUtil;
-
-
-
-import com.sun.jna.NativeLibrary;
 
 /**
  * Command Line Interface for the LiveShift application

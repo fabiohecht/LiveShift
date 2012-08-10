@@ -92,6 +92,7 @@ public class ReputationTableModel implements TableModel
 		return names[columnIndex];
 	}
 
+	@Override
 	public void addTableModelListener(TableModelListener l)
 	{
 		synchronized (this)
@@ -100,6 +101,7 @@ public class ReputationTableModel implements TableModel
 		}
 	}
 
+	@Override
 	public void removeTableModelListener(TableModelListener l)
 	{
 		synchronized (this)
