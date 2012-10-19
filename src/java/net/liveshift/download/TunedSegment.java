@@ -626,8 +626,11 @@ class TunedSegment {
 					
 					MovingAverage failureCounter = this.failureCounter.get(peerId);
 					
-					if (failureCounter != null)
-						failureCounter.inputValue(1);
+					if (failureCounter == null) {
+						logger.warn("no failure counter for p2paddress "+p2pAddress);
+						return;
+					}
+					failureCounter.inputValue(1);
 					
 					if (logger.isDebugEnabled()) logger.debug("failureCounter of peerId "+peerId+" is "+failureCounter);
 					
@@ -661,8 +664,11 @@ class TunedSegment {
 				if (candidatePeerId.equals(peerId)) {					
 					MovingAverage failureCounter = this.failureCounter.get(candidatePeerId);
 					
-					if (failureCounter != null)
-						failureCounter.inputValue(1);
+					if (failureCounter == null) {
+						logger.warn("no failure counter for PeerID "+peerId);
+						return;
+					}
+					failureCounter.inputValue(1);
 					
 					if (logger.isDebugEnabled()) logger.debug("failureCounter of peerId "+candidatePeerId+" is "+failureCounter);
 					

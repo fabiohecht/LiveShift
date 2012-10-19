@@ -780,8 +780,8 @@ public class CommandLineInterface {
 	 */
 	private void printUsage() {
 		System.out.println("");
-		System.out.println("LiveShift+PSH Command Line Interface");
-		System.out.println("Copyright (C) 2009 CGG@IFI Fabio Hecht, Thomas Bocek, Cristian Morariu, Kevin Leopold");
+		System.out.println("LiveShift Command Line Interface");
+		System.out.println("Copyright (C) 2012 CGG@IFI Fabio Hecht et al.");
 		System.out.println("");
 		HelpFormatter formatter = new HelpFormatter();
 		formatter.printHelp("java " + CommandLineInterface.class.getSimpleName(), lvOptions);
